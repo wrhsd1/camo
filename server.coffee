@@ -227,6 +227,8 @@ server = Http.createServer (req, resp) ->
       "Content-Security-Policy" : default_security_headers["Content-Security-Policy"]
 
     transferredHeaders['If-Modified-Since'] = req.headers['if-modified-since'] if req.headers['if-modified-since']
+    transferredHeaders['If-Match'] = req.headers['if-match'] if req.headers['if-match']
+    transferredHeaders['If-None-Match'] = req.headers['if-none-match'] if req.headers['if-none-match']
 
     delete(req.headers.cookie)
 
