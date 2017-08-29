@@ -188,7 +188,8 @@
               break;
             case 304:
               srcResp.destroy();
-              return resp.writeHead(srcResp.statusCode, newHeaders);
+              resp.writeHead(srcResp.statusCode, newHeaders);
+              return resp.end();
             default:
               contentType = newHeaders['content-type'];
               if (contentType == null) {
